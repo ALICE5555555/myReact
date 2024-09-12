@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+
+    <!-- 步驟1:載入React,Bable -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 步驟2:載入根元素(root) -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function App() {
+            const [userid, setUserid] = useState('');
+            const [username, setUsername] = useState('');
+
+            //同時處理不同欄位的資料
+            const []
+            //送出鈕的函式
+            const handleSubmit = (e) => {
+                //取消html預設行為
+                e.preventDefault();
+                console.dir(userid);
+            }
+
+            // //帳號文字方塊異動時的函式
+            // const handleChange = (e) => {
+            //     setUserid(e.target.value);
+            // }
+
+            //名稱文字方塊異動時的函式
+            const handleChange2 = (e) => {
+                setUsername(e.target.value);
+            }
+
+            //jsx寫法
+            return (
+                <div>
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor="uid">帳號{userid}</label>
+                        <input type="text" id="uid" onchange={handleInputChange} value={formData.userid} name="uid" />
+
+                        <label htmlFor="uname">名稱{username}</label>
+                        <input type="text" id="uname" onchange={handleInputChange2} name="uname" />
+                        <button type="submit">送出</button>
+                    </form>
+                </div>
+            )
+        }
+        // 步驟4:渲染(顯示)App元件到根源件(root)上
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />);
+    </script>
+    <!-- jQuery主程式 -->
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+</body>
+
+</html>
